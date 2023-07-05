@@ -1,5 +1,13 @@
 {{template "header.html" .}}
 
-<h1>Hello Gin</h1>
+    {{range .payload}}
+        <!-- Create link for the article according to it's ID -->
+        <a href="/article/view/{{.ID}}">
+            <!--Display the title of the article -->
+            <h2>{{.Title}}</h2>
+        </a>
+        <!-- Display content -->
+        <p>{{.Content}}</p>
+    {{end}}
 
 {{template "footer.html" .}}
