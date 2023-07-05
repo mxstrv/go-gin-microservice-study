@@ -14,7 +14,9 @@ func main() {
 
 	// Route '/'
 	router.GET("/", showIndexPage)
+	// Route /article/view/{article_id} handler
+	router.GET("/article/view/:article_id", getArticle)
 
 	// Start app
-	router.Run()
+	_ = router.Run()
 }
